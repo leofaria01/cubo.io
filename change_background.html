@@ -1,0 +1,74 @@
+<html lang="en"><head>
+
+    <meta charset="UTF-8">
+    
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+  <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  
+  
+    <title>CodePen - [5 Lines] Dark Mode Toggle</title>
+    
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+  <style>
+  body div.darkmode {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem 1rem 0.75rem 1rem;
+    cursor: pointer;
+  }
+  body.dark .darkmode .light, body:not(.dark) .darkmode .dark {
+    display: none;
+  }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  
+  
+  </head>
+  
+  <body translate="no" style="background: rgb(249, 249, 249); color: rgb(32, 34, 37);" class="">
+    <!--1,2 - counting the style as a line-->
+    <div class="darkmode"><!--3-->
+      <div class="light fal fa-sun"><!--4--></div>
+      <div class="dark fal fa-moon"><!--5--></div>
+    </div>
+  
+      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://codepen.io/z-/pen/a8e37caf2a04602ea5815e5acedab458.js"></script><link href="https://codepen.io/z-/pen/a8e37caf2a04602ea5815e5acedab458.css" rel="stylesheet"><div style="position:fixed;bottom:-5rem;right:-5rem;" id="user-button"><div class="u-icons" style="position:absolute;z-index:950;top:50%;left:50%;width:0;height:0%;opacity:0;"><a href="https://twitter.com/Osorpenke" target="_blank"><div class="u-card fab fa-twitter"></div></a><a href="https://codepen.io/z-" target="_blank"><div class="u-card fab fa-codepen"></div></a><a class="u-random" href="https://codepen.io/z-/details/azVXym" target="_blank"><div class="u-card fas fa-dice-five"></div></a></div><div class="u-card u-main" style="position:relative;z-index:1000;width:4rem;height:4rem;display:grid;place-items:center;background:var(--user-button-background)"><img alt="" style="height:100%; width:100%;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg"></div></div>
+        <script id="rendered-js">
+  $(".darkmode").click(function () {//1
+    $("body").toggleClass("dark") //2
+    .css( //3
+    $("body").hasClass("dark") ? //4
+    { background: "#202225", color: "#f9f9f9" } : { background: "#f9f9f9", color: "#202225" } //5
+    );
+  });
+  // It's not clear if the ternary counts as 2 lines or 1 when I'm trying to minimise line count, but I'm counting it as 2
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  
+  
+  
+  
+   
+  </body></html>

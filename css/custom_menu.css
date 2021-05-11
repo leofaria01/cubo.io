@@ -1,0 +1,190 @@
+
+    @charset "UTF-8";
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url('your/path/fontawesome-webfont.eot?v=3.0.1');
+        src: url('your/path/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+          url('your/path/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+          url('your/path/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+    /***** [Variables] *****/
+    /* Geometry */
+    /* Colors */
+    /* Text */
+    /* Mixins */
+    /***** [Setup] *****/
+    /*
+    body {
+
+      font-family: "Raleway";
+      background: #C8F7C5;
+    }
+    */
+    a{
+        color: aliceblue;
+        text-decoration:none;
+        font-size: 25px; 
+    }
+    
+    .scene {
+      position: fixed;
+      float: right;
+      top: 12%;
+      /*left: 50%;*/
+      right: 10%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 60px;
+      perspective: 1800px;
+      z-index: 999;
+    }
+    
+    .menu-2 {
+      position: relative;
+      width: inherit;
+      height: inherit;
+      transform-style: preserve-3d;
+      /***** [Menu open state] *****/
+      /* Show each layer's text */
+      /**** [Hover state] *****/
+      /***** [Layer styling] *****/
+    }
+    .menu-2 input[type=checkbox] {
+      visibility: hidden;
+    }
+    input[type=checkbox]:checked ~ .menu__layer label .layer__content {
+      visibility: visible;
+    }
+    .menu-2 input[type=checkbox]:checked ~ .top {
+      transform: translate3d(-90px, 0, 50px);
+      /* Hide the menu icon */
+    }
+    .menu-2 input[type=checkbox]:checked ~ .top label .icon {
+      visibility: hidden;
+    }
+    .menu-2 input[type=checkbox]:checked ~ .middle {
+      transform: translate3d(50, 0, 50px);
+    }
+    .menu-2 input[type=checkbox]:checked ~ .bottom {
+      transform: translate3d(90px, 0, 0px);
+      /* Hide the shadow */
+    }
+    .menu-2 input[type=checkbox]:checked ~ .bottom:after {
+      visibility: hidden;
+    }
+    .menu-2:hover .menu__layer.top {
+      transform: translateZ(160px);
+    }
+    .menu-2:hover .menu__layer.middle {
+      transform: translateZ(0px);
+    }
+    .menu-2:hover .menu__layer.bottom {
+      transform: translateZ(160px);
+      /* Show the shadow */
+    }
+    .menu-2:hover .menu__layer.bottom:after {
+      visibility: visible;
+    }
+    .menu__layer {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      transition: all 200ms ease;
+    }
+    .menu__layer label {
+      position: relative;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+      cursor: pointer;
+    }
+    .menu__layer label .icon,
+    .menu__layer label .layer__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #eee;
+    }
+    .menu__layer label .icon {
+      font-size: 40px;
+      /*content: "\f0c9";*/
+    }
+
+    /* Hide the menu icon */
+    label .icon {
+        visibility: visible;
+    }
+    .menu__layer label .icon .fa {
+        display: inline-block;
+        font: normal normal normal 10px/1 'FontAwesome';
+        font-family: 'FontAwesome';
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .fa-navicon:before, .fa-reorder:before, .fa-bars:before {
+        content: "\f0c9";
+    }
+    .menu__layer label .layer__content {
+      visibility: hidden;
+      font-size: 20px !important;
+      font-weight: 100;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .menu__layer.top {
+      background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+      /*background-color:#81CFE0 ;*/
+      z-index: 3;
+    }
+    .menu__layer.middle {
+      background-color: #E08283;
+      z-index: 2;
+    }
+    .menu__layer.middle:hover {
+      background-color: #E08283;
+      box-shadow: 0 0 5px #E08283,
+                0 0 25px #E08283,
+                0 0 50px #E08283,
+                0 0 100px #E08283;
+      z-index: 2;
+    }
+    .menu__layer.bottom {
+      background-color: #68C3A3;
+      z-index: 1;
+      /* Shadow */
+    }
+    .menu__layer.bottom:hover {
+      background-color: #68C3A3;
+      box-shadow: 0 0 5px #68C3A3,
+                0 0 25px #68C3A3,
+                0 0 50px #68C3A3,
+                0 0 100px #68C3A3;
+      z-index: 1;
+      /* Shadow */
+    }
+    .menu__layer.bottom:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      content: " ";
+      visibility: hidden;
+      /*-webkit-box-shadow: 10px 10px 60px 0px rgba(233, 232, 232, 0.75);
+      -moz-box-shadow: 10px 10px 60px 0px rgba(233, 232, 232, 0.75);
+      box-shadow: 10px 10px 60px 0px rgba(233, 232, 232, 0.75);9*/
+    }
+      
+
+     

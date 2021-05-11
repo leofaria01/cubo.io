@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellphone Iframe</title>
+    <link rel="stylesheet" href="css/cellphone.css" />
+    <link rel="dns-prefetch" href="https://fast.appcues.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+    <script src="celphone.html" type="text/javascript"></script> 
+    <script src="touch.html" type="text/javascript"></script> 
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+    <script>
+        
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+
+    </script>
+
+</head>
+<body translate="no">
+    <form action="" class="settings">
+        <!--<h2 id="fecharmobile" onclick="closeweb()">SAIR X</h2></br>-->
+        <h2>Selecione um App</h2></br>
+        <span id="modelo1" onclick="option01()">&#127916; Executando Vídeos </span></br></br>
+        <span id="modelo2"  onclick="option02()">&#128074; Pedra Papel Tesoura</span></br></br>
+      <!-- <label for="phone">Android</label>
+        <select name="phone" id="phone">
+            <option value="1" id="mob01" >Lollipop</option>
+            <option value="2" id="mob02">Jelly Bean</option>
+            <option value="3" id="mob03">Ice Cream Sandwich </option>
+        </select>
+        
+        <div class="input-cont">
+            <input name="notch" type="checkbox" checked>
+            <label for="notch">Notch</label>
+            --> 
+        </div><article id="article_section">
+            <span id="titulo_mobile">Título do artigo</span></br>
+              <span id="text_mobile">Descrição do APP Lorem ipsum dolor sit amet,</span>
+        </article>
+       
+    </form>
+    
+    <div class="view">
+        <div class="mobile obj" data-rotX="0" data-rotY="0">
+            <div class="screen">
+                <div class="status-bar">
+                    <div class="side left"></div>
+                    <div class="side right"></div>
+                </div>
+                <div class="notch">
+                    <div class="audio"></div>
+                </div>
+                <div class="app-cont">
+    
+                </div>
+            </div>
+    
+            <div class="button button-right button-large"></div>
+            <div class="button button-left button-down"></div>
+            <div class="button button-left"></div>
+            
+            <div class="case">
+                
+            </div>
+        </div>
+    </div>
+    <script src="js/cellphone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+   <!--
+    <script src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-1096510f-c2c0-a3a0-4388-f4d5850aeb1e" crossorigin=""></script>
+    -->
+   
+    <script id="rendered-js">
+        
+$('.obj').click(grab);
+$(document).on('mousemove', move);
+$(document).on('click', ungrabAll);
+
+var rotX;
+var rotY;
+
+var speed = 1 / 4;
+
+function grab(evt) {
+  evt.stopPropagation();
+  if ($(this).hasClass('grabbing')) {
+    ungrabAll();
+  } else {
+    $(this).toggleClass('grabbing');
+    $(this).data('initX', evt.clientX).data('initY', evt.clientY);
+    console.log($(this).attr('data-rotX'));
+  }
+}
+
+function move(evt) {
+  var obj = $('.obj.grabbing');
+  if (obj.length > 0) {
+    rotX = -(evt.clientY - obj.data('initY') + parseInt(obj.attr('data-rotX'))) * speed;
+    rotY = evt.clientX - obj.data('initX') + parseInt(obj.attr('data-rotX')) * speed;
+    console.log(rotX, rotY);
+    obj.css('transform', 'rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)');
+  }
+
+}
+
+function ungrabAll() {
+  $('.obj.grabbing').attr('data-rotY', rotY).attr('data-rotX', rotX);
+  $('.obj.grabbing').removeClass('grabbing');
+}
+
+    </script>
+     <script src="js/touch.js"></script>
+     <script src="js/cellphone.js"></script>
+ <!--    <script>openweb()</script> -->
+  <!--   <script>openweb1()</script> -->
+    <script>
+
+       
+ //back01.css.style.backgroundImage = "url('../images/aprenda_ingles.jpeg)"; //background-image: url(../images/aprenda_ingles.jpeg)
+
+//var modelonovo01 = window.document.getElementById('modelo1');
+//var modelonovo02 = window.document.getElementById('modelo2');
+
+//let titlemob = window.document.getElementById('titulo_mobile')
+//let descmob = window.document.getElementById('text_mobile');
+    //var mob01 = window.document.getElementById('mob01')
+    function option01(){
+        let titlemob = window.document.getElementById('titulo_mobile')
+        let descmob = window.document.getElementById('text_mobile')
+        let back01 = window.document.querySelector('.app-cont');
+        //let url = "../images/aprenda_ingles.jpeg"
+        let url = "../images/rick_and_morty.jpeg"
+        back01.style.backgroundImage = `url(${url})`;
+
+        titlemob.innerHTML = `Titulo NOVO 01`
+        descmob.innerHTML = '01 NOVA DESCRIÇÃO de aaplicacao</br> E LA LA LA'
+        
+       
+    }  
+    function option02(){
+        let titlemob = window.document.getElementById('titulo_mobile')
+        let descmob = window.document.getElementById('text_mobile');
+        let back01 = window.document.querySelector('.app-cont');
+
+        let url = "../images/pedra_papel_tesoura.jpeg"
+        back01.style.backgroundImage = `url(${url})`;
+
+        titlemob.innerHTML = ` 02 NOVO Titulo`
+        descmob.innerHTML = `02 NOVA DESCRIÇÃO Da aplicação</br> E LA LA LA `
+    }
+    
+    </script> 
+     
+</body>
+</html>
