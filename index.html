@@ -1,26 +1,74 @@
->
+<!DOCTYPE html>
 <html>
 <head>
-    <!-- Article: https://paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/ -->
-    <!-- Demo: https://paulrhayes.com/experiments/cube-3d/ -->
-    <!-- Originally posted: 17th July 2009 -->
+    <!-- Article: https://paulrhayes.com/2010-09/3d-css-cube-ii-touch-gestures-click-and-drag/ -->
+    <!-- Demo: https://paulrhayes.com/experiments/cube-3d/touch.html -->
+    <!-- Originally posted: 28th September 2010 -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>3D CSS cube, use arrow keys to rotate &mdash; Paul Hayes</title>
-    <meta name="author" content="" />
-    <link rel="canonical" href="https://paulrhayes.com/experiments/cube-3d/" />
+    <title>Do + Developer - Desenvolvimento de websites e app mobile</title>
+    <meta name="author" content="Leo Faria" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://paulrhayes.com/experiments/cube-3d/touch.html" />
     <link rel="stylesheet" href="../experiment-styles.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/touch.css" />
+    <link rel="stylesheet" href="css/works.css" />
+    <link rel="stylesheet" href="css/custom_menu.css" />
+    <link rel="stylesheet" href="css/custom_login.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;amp;display=swap'rel='stylesheet'>
+<link rel='apple-touch-icon' type='image/png' href='https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png' />
+<meta name='apple-mobile-web-app-title' content='CodePen'>
 
-    <link rel="stylesheet" href="css/experiment.css" />
+<link rel='shortcut icon' type='image/x-icon' href='https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico' />
+
+<link rel='mask-icon' type='' href='https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg' color='#111' />
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="celphone.html" type="text/javascript"></script> 
+    <script type="text/javascript">
+        function sendEmail() {
+            Email.send({
+                SecureToken: "security token of your smtp",
+                To: "leofaria01@gmail.com",
+                From: "leofaria01@gmail.com",
+                Subject: "Contato pelo Site DO +",
+                Body: document.getElementById('myText').value
+            }).then( 
+                message => alert("E-mail enviado com sucesso!")
+            );
+        }
+    </script>
+     <script>
+      window.console = window.console || function(t) {};
+    </script>
+    
+      
+      
+      <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage('resize', '*');
+      }
+    </script>
+    
 </head>
-<body class="experiment">
+<header id="home"></header>
+<body class="experiment" >
+  <!--chamada cursor animado-->
+  <div class='cursor cursor--large'></div>
+<div class='cursor cursor--small'></div>
+    <!-- LOGO-->
     <div class="container">
 		<div class="name-containers">
 		  <div class="first-name">
-			<h1 class="name">Leo</h1>
+			<h1 class="name">Do</h1>
 		  </div>
 		  <div class="first-name">
-			<h1 class="name">Leo</h1>
+			<h1 class="name">Do</h1>
 		  </div>
 		  <div class="second-name">
 			<h1 class="name">Developer</h1>
@@ -51,333 +99,446 @@
 		</div>
 	  </div>
 	</div>
-	<nav class="mainNav">
+    <!-- mENU 1-->
+    <!--
+    <nav class="mainNav">
 		<ul>
 			<li><a href="#" data-title="Home">Home</a></li>
 			<li><a href="#" data-title="Weblog">Weblog</a></li>
-			<li><a href="#" data-title="About">About</a></li>
-			<li><a href="#" data-title="Photos">Photos</a></li>
+			<li><a href="#" data-title="About">Sobre</a></li>
+			<li><a href="#" data-title="Photos">Works</a></li>
 		</ul>
 	</nav>
+-->
+    <!--mENU 2-->
+    <div class="scene">
+        <div class="menu-2">
+            <input type="checkbox" id="open-menu" name="open-menu">
+            
+            <div class="menu__layer top">
+                <label for="open-menu"><span class="fa fa-bars icon"></span><span class="layer__content"><a href="#" style="font-size: 35px !important;">&#129482;</a></span></label><!--&#127968; home-->
+            </div>
+            
+            <div class="menu__layer middle">
+                <label for="open-menu"></span><span class="layer__content"><a href="#portifolio" style="font-size: 35px !important;">&#128241;</a></span></label>
+                
+            </div>
+            
+            <div class="menu__layer bottom">
+                <label for="open-menu"><span class="layer__content"><a href="#contato" style="font-size: 35px !important;">&#128231;</a></span></label>
+                
+            </div>
+        </div>
+    </div>
+  <!-- 
+<div class="menu-3">
+    <ul>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-reorder'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-th-large'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-bar-chart'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-tasks'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-bell'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-archive'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-comment'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-sitemap'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-thumbs-up'></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href=''>
+            <i class='icon-tumblr'></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    --> 
+    <!--CUBO-->
     <div class="wrapper">
         <p class="learn">
           
         </p>
 
-<div id="experiment">
-    <div id="cube">
-        <div class="face one">
-            One face
+<article class="viewport">
+    <section class="cube">
+        <div></div>
+        <div>
+            <p>Desenvolvimento de websites e Apps Mobile</p><br/>
+            <h2><span style="color: #00ffff;">3D cube</span></h2><br/>
+            
+           
+            <p>Use as setas para navegar ou clique e segure o mouse. Em telas sensíveis ao toque, use um dedo para girar. Pressione ESC para reiniciar.</p>
+           
         </div>
-        <div class="face two">
-            Up, down, left, right
+        <div><!-- width="640" height="520" -->
+          <iframe width="350" height="350"
+src="https://www.youtube.com/embed/SlkpxNBbX_0">
+</iframe>
+            <!-- video -->
         </div>
-        <div class="face three">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <div>  <!--https://paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/-->
+            <h2><a href="/Home_star_wars.html" target="_top"><span style="color:#E3E305 ;">API Star Wars</span></a></h2></br>
+            <time>25 de Abril 2021</time>
+            <p>Por Leo Faria</p>
+            <p>"Uma APi simples, que busca informações dos personagens do universo <span style="color:#E3E305 ;">Star Wars</span>."</p>
+            <p>Acesse: <a href="/Home_star_wars.html" target="_top"> E saiba mais...</a></p>
         </div>
-        <div class="face four">
-            New forms of navigation are fun.
+        <div>
+            <p>Projeto e construção de <span style="color: dodgerblue;">websites</span> e <span style="color:#E3E305 ;">Apps Mobile</span></p>
         </div>
-        <div class="face five">
-            Rotating 3D cube
+        <div>
+            <small>Nada aqui abaixo.</small>
         </div>
-        <div class="face six">
-            <img src="images/sonic.gif" />
-        </div>
+    </section>
+</article>
     </div>
+    <!--
+Inspired by this dribble by The Purple Bunny:
+https://dribbble.com/shots/1677163-Menu portifolio
+-->
+<div id="portifolio">
+ <div class="container-works">
+    <input type="checkbox" class="toggle" id="toggle" checked="checked"/><label class="toggle" for="toggle">ALTERAR INCLINAÇÃO</label>
+    <div class="menu">
+      <div class="top">
+        <span class="search">
+          <input type="text">
+        </span>
+        <a class="exit" href="#" tabindex="0"></a>
+      </div>
+      <ul class="middle">
+        <li tabindex="0"><i class="fa fa-calendar"></i><a href="#portifolioweb" style="font-size: 15px;">Web Sites</a></li>
+        <li tabindex="1" id="mobile_project" class="mobile_project"  onclick="openweb0()"><i class="fa fa-camera"></i><a href="#mobile_up" style="font-size: 15px;">Fotos Mobile</a></li>
+        <li tabindex="2" id="mobile_project1" class="mobile_project1" onclick="openweb1()"><i class="fa fa-check-square-o"></i><a href="#mobile_up" style="font-size: 15px;">Agenda Mobile</a></li>
+        <li tabindex="3"><i class="fa fa-map-marker"></i>Places</li>
+        <li tabindex="4"><i class="fa fa-codepen"></i>Codepen</li>
+        <li tabindex="5"><i class="fa fa-dribbble"></i>Dribbble</li>
+        <li tabindex="6"><i class="fa fa-user"></i>User account</li>
+        <li tabindex="7"><i class="fa fa-cogs"></i>Settings</li>
+      </ul>
+      <div class="bottom"></div>
+      <div class="menu-back"></div>
+      <div class="glass-reflection"></div>
+    </div>
+  </div>
+ </div>
+ <div id="floatclose" class="floatclose" onclick="closeweb()"><h5 style="color: antiquewhite;"><a href="#portifolio">X - FECHAR | VOLTAR </br>PARA MENU MOBILE</a></h5></div>
+ <div id="mobile_up">
+   <iframe id="ifr" name="ifr" src="../celphone.html" width="100%" height="700px" ></iframe> 
 </div>
+ 
+<!--projects style="display: none;
 
+<div class="cards" id="cards">
+    <div class="portfolio">
+          <div class="contents">
+           <p style="color: rgb(158, 23, 23);">mon chouette portfolio</p>
+    
     </div>
-    <form id="contact-stack-form" class="form">
-        <div class="cube-1 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+    </div>
+    
+    
+    <p id="closeweb" style="color: rgb(158, 23, 23);" onclick="closeweb()">SAIR <span style="font-size:50px;">x</span></p>
+    <a class="stack" href="#">
+    
+        <div class="card topcard">
+          <div class="contents">
+            <p id="projets">1 NOM DU PROJET </p>
+         
+          </div>
         </div>
-        <div class="cube-2 w-100 cube">
-            <div class="front">
-                <label for="name" class="label">Name</label>
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-3 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+          <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-4 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+            <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-5 w-300 cube">
-            <div class="front">
-                <input type="text" name="name" id="name" placeholder="Your Name" class="field">
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-6 w-180 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-7 w-120 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+            <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-8 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-9 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-10 w-100 cube">
-            <div class="front">
-                <label for="email" class="label">Email</label>
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+            <p id="projets">NOM DU PROJET </p>
         </div>
-        <div class="cube-11 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
         </div>
-        <div class="cube-12 w-300 cube">
-            <div class="front">
-                <input type="email" name="email" id="email" placeholder="Your Email" class="field">
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right">
-                <label for="gossip" class="label">Gossip</label>
-            </div>
+    <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-13 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-14 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+            <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-15 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right">
-                <input type="text" name="gossip" id="gossip" placeholder="How did you hear about us?" class="field">
-            </div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-16 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+           <p id="projets">NOM DU PROJET </p>
+          </div>
         </div>
-        <div class="cube-17 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
+        <div class="card shadow"></div></a><a class="stack" href="#">
+        <div class="card topcard">
+          <div class="contents">
+            <p id="projets">NOM DU PROJET </p>
+    </div>
+    </div>
+    <div class="card shadow"></div></a><a class="stack" href="#">
+    </div>
+
+     fim projects--> 
+     <div id="portifolioweb">
+     <iframe src="../Projetos.html" width="100%" height="700px"></iframe> 
+     </div>
+<section id="contato"></section>
+
+<!--
+    <div class="screen">
+        <div class="content-form extrusion">
+          <h2 class="form2">Contato</h2>
+          <form>
+            <label id="form-send" class="form-send" for="username">Nome</label>
+                  <input type="text" name="username" placeholder=""/>
+            <label id="form-send" class="form-send" for="email">E-mail</label>
+                <input type="email" name="email" placeholder=""/>
+            <label id="form-send" class="form-send" for="mesage" name="mesage">Mensagem</label>
+                <input class="form-send" type="text" name="message-text" placeholder=""/>
+            <input type="submit" value="ENVIAR">
+        </form>
         </div>
-        <div class="cube-18 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-19 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-20 w-100 cube">
-            <div class="front">
-                <label for="message" class="label">Message</label>
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-21 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-22 w-300 cube">
-            <div class="front">
-                <textarea name="message" id="message" placeholder="Message" class="field textarea"></textarea>
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-23 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-24 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-25 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-26 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-27 w-100 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-28 w-100 cube">
-            <div class="front">
-                <label for="gossip" class="label">Gossip</label>
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-29 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-30 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-31 w-300 cube">
-            <div class="front">
-                <input type="text" name="gossip" id="gossip" placeholder="How did you hear about us?" class="field">
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-32 w-300 cube">
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-        <div class="cube-33 w-300 cube">
-            <div class="front">
-                <button id="contact-stack-button" type="button" class="button">Submit</button>
-            </div>
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
+      </div>
+      -->
+    <!--
+<section class="wrapper-form">
+    <label class="toggle" style="color: aliceblue;font-family: Lato, Sans-serif; line-height: 16px; font-size: 20px; margin-bottom: 30px;">ENTRE EM CONTATO  Respondo o mais rápido possível \o/</label>
+	<form>
+			<input class="to-text" placeholder="Nome" type="text" maxlength="16"></input>
+			<input class="from-email" placeholder="E-mail" type="email"></input>
+			<textarea maxlength="320" class="message-text" placeholder="Mensagem"></textarea>
+			<button type="submit">ENVIAR</button>
+	</form>
+
+	<div class="message-wrapper">
+			<p class="to-field">Para Leo</p>	
+			<p class="message">You're amazing!</p>
+			<p class="from-field">De <span>futuro JOB...</span></p>
+	</div>
+</section>
+-->
+
+<div class="login-box">
+    <h2>Contato</h2>
+    <form>
+      <div class="user-box">
+        <input type="text" name="" required="">
+        <label id="myText">Nome</label>
+      </div>
+      <div class="user-box">
+        <input type="email" name="" required="">
+        <label id="myText">E-mail</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="" required="">
+        <label id="myText">Mensagem</label>
+      </div>
+      <a href="#login" onclick="sendMail(); "><!--return false-->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Enviar
+      </a>
     </form>
+  </div>
+</section>
+<!--<div class="footer" id="footer">This will always appear at the bottom of the page, but <strong>not fixed</strong>.</div>-->
+<iframe src="../footer.html" width="100%" height="300px"></iframe>   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="js/experiment.js"></script>
+    <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
+    <script src='https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script>
     <script src="js/touch.js"></script>
-</body>
+    <script src="js/footer.js"></script>
+    <script src="js/cellphone.js"></script>
+    <script id='rendered-js' >
+      console.clear();
+      
+      const { gsap } = window;
+      
+      const cursorOuter = document.querySelector('.cursor--large');
+      const cursorInner = document.querySelector('.cursor--small');
+      let isStuck = false;
+      let mouse = {
+        x: -100,
+        y: -100 };
+      
+      
+      // Just in case you need to scroll
+      let scrollHeight = 0;
+      window.addEventListener('scroll', function (e) {
+        scrollHeight = window.scrollY;
+      });
+      
+      let cursorOuterOriginalState = {
+        width: cursorOuter.getBoundingClientRect().width,
+        height: cursorOuter.getBoundingClientRect().height };
+      
+      const buttons = document.querySelectorAll('main button');
+      
+      buttons.forEach(button => {
+        button.addEventListener('pointerenter', handleMouseEnter);
+        button.addEventListener('pointerleave', handleMouseLeave);
+      });
+      
+      document.body.addEventListener('pointermove', updateCursorPosition);
+      document.body.addEventListener('pointerdown', () => {
+        gsap.to(cursorInner, 0.15, {
+          scale: 2 });
+      
+      });
+      document.body.addEventListener('pointerup', () => {
+        gsap.to(cursorInner, 0.15, {
+          scale: 1 });
+      
+      });
+      
+      function updateCursorPosition(e) {
+        mouse.x = e.pageX;
+        mouse.y = e.pageY;
+      }
+      
+      function updateCursor() {
+        gsap.set(cursorInner, {
+          x: mouse.x,
+          y: mouse.y });
+      
+      
+        if (!isStuck) {
+          gsap.to(cursorOuter, {
+            duration: 0.15,
+            x: mouse.x - cursorOuterOriginalState.width / 2,
+            y: mouse.y - cursorOuterOriginalState.height / 2 });
+      
+        }
+      
+        requestAnimationFrame(updateCursor);
+      }
+      
+      updateCursor();
+      
+      function handleMouseEnter(e) {
+        isStuck = true;
+        const targetBox = e.currentTarget.getBoundingClientRect();
+        gsap.to(cursorOuter, 0.2, {
+          x: targetBox.left,
+          y: targetBox.top + scrollHeight,
+          width: targetBox.width,
+          height: targetBox.width,
+          borderRadius: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0.1)' });
+      
+      }
+      
+      function handleMouseLeave(e) {
+        isStuck = false;
+        gsap.to(cursorOuter, 0.2, {
+          width: cursorOuterOriginalState.width,
+          height: cursorOuterOriginalState.width,
+          borderRadius: '50%',
+          backgroundColor: 'transparent' });
+      
+      }
+      //# sourceURL=pen.js
+          </script>
+   </body>
+
 </html>
